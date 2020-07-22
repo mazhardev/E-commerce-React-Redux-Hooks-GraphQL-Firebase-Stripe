@@ -1,7 +1,10 @@
 import React from 'react';
-import './HomePage.scss';
-import MenuItem from './MenuItem'
-class HomePage extends React.Component {
+
+import MenuItem from '../menu-item/menu-item.component';
+
+import './directory.styles.scss';
+
+class Directory extends React.Component {
   constructor() {
     super();
 
@@ -45,15 +48,13 @@ class HomePage extends React.Component {
 
   render() {
     return (
-      <div className='homepage'>
-        <div className='directory-menu'>
-          {this.state.sections.map(({ id, ...otherSectionProps }) => (
-            <MenuItem key={id} {...otherSectionProps} />
-          ))}
-        </div>
+      <div className='directory-menu'>
+        {this.state.sections.map(({ id, ...otherSectionProps }) => (
+          <MenuItem key={id} {...otherSectionProps} />
+        ))}
       </div>
     );
   }
 }
 
-export default HomePage;
+export default Directory;
